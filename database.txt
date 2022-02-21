@@ -1,0 +1,103 @@
+CREATE DATABASE kurut_taxi;
+
+\c 
+
+create table car (id serial primary key,
+brand varchar(255),
+model varchar(255),
+fuel varchar(50),
+engine int,
+box_car varchar(50),
+year_car date,
+color varchar(100));
+
+create table driver (id serial primary key,
+name varchar(255),
+surname varchar(255),
+birth date,
+experince int, 
+gender varchar(50),
+car_id int references car(id));
+
+create table oper_call (id serial primary key,
+name varchar(50),
+surname varchar(50),
+birth date,
+gender varchar(50));
+
+
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Mercedes', 's350', 'deisel', 2.5, 'mechanic', '2000-10-10', 'Black');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Mercedes', 's350', 'deisel', 4.2, 'mechanic', '2004-10-06', 'White');insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Mercedes', 's350', 'petrol', 3.2, 'automatic', '2007-09-01', 'Red');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Mercedes', 's350', 'petrol', 4.7, 'automatic', '2013-05-01', 'Yellow');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Mercedes', 's350', 'electric', 100, 'automatic', '2015-06-09', 'Black');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Mercedes', 's350', 'electric', 80, 'automatic', '2018-08-10', 'Blue');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('BMW', 'x5', 'diesel', 1.9, 'mechanic', '2002-08-10', 'White');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('BMW', 'x5', 'diesel', 2.7, 'automatic', '2006-05-15', 'Orange');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('BMW', 'x5', 'petrol', 3.0, 'automatic', '2009-03-09', 'Black');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('BMW', 'x5', 'petrol', 5, 'automatic', '2016-03-09', 'Green');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('BMW', 'x5', 'electric', 100, 'automatic', '2017-04-09', 'Purple');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('BMW', 'x5', 'electric', 80, 'automatic', '2021-04-09', 'Brown');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Toyota', 'Camry 30', 'deisel', 2.7, 'mechanic', '2001-01-01', 'Black');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Toyota', 'Camry 30', 'deisel', 3.0, 'mechanic', '2004-01-01', 'White');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Toyota', 'Camry 50', 'petrol', 2.5 , 'automatic', '2010-01-01', 'Black');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Toyota', 'Camry 70', 'petrol', 3.5 , 'automatic', '2017-01-01', 'Red');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Toyota', 'Camry 70', 'electric', 100 , 'automatic', '2017-01-01', 'White');
+insert into car(brand, model, fuel, engine, box_car, year_car, color) VALUES ('Toyota', 'Camry 75', 'electric', 120 , 'automatic', '2020-01-01', 'Blue');
+
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Azamat', 'Azamatov', '1960-01-16', 20, 'male', 1);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Azat', 'Mamatov', '1964-06-06', 18, 'male', 2);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Tamerlan', 'Shamshedinov', '1970-08-16', 15, 'male', 3);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Bekzat', 'Shedinov', '1968-01-16', 19, 'male', 4);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Aziz', 'Isamov', '1971-03-16', 14, 'male', 5);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Aziza', 'Ismailova', '1978-12-16', 20, 'female', 6);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Sofia', 'Ailova', '1980-11-12', 17, 'female', 7);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Maria', 'Reznikova', '1986-06-09', 15, 'female', 8);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Maksim', 'Kusov', '1989-04-06', 13, 'male', 9);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Andrey', 'Kustov', '1991-03-06', 12, 'male', 10);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Ali', 'Mishirov', '1994-05-09', 11, 'male', 11);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Alihan', 'Petrov', '1997-02-18', 9, 'male', 12);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Malena', 'Ispanka', '2001-09-12', 4, 'female', 13);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Lisa', 'Yaponka', '2002-03-13', 2, 'female', 14);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Evginei', 'Sokolov', '1996-06-12', 7, 'male', 15);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Bob', 'Square', '1980-12-31', 14, 'male', 16);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Joze', 'Monterey', '1996-07-17', 9, 'male', 17);
+insert into driver(name, surname, birth, experince, gender, car_id) values ('Eva', 'Somalova', '2003-01-16', 1, 'female', 18);
+
+insert into oper_call (name, surname, birth, gender) values ('Maria', 'Chernisheva', '1980-01-02', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Margarita', 'Chapaeva', '1982-04-14', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Babita', 'Isapanova', '1984-05-11', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Yulia', 'Isanova', '1986-03-19', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Polina', 'Novale', '1985-11-20', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Nikolay', 'Polski', '1988-11-20', 'male');
+insert into oper_call (name, surname, birth, gender) values ('Arsinei', 'Polyak', '1990-05-12', 'male');
+insert into oper_call (name, surname, birth, gender) values ('Sergei', 'Kamenski', '1992-09-12', 'male');
+insert into oper_call (name, surname, birth, gender) values ('Ipolita', 'Zdravisheva', '1993-02-02', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Aleksandra', 'Zelenskaya', '1997-07-12', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Serbiya', 'Amenski', '1995-09-19', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Lolita', 'Metronova', '1997-09-19', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Lolita', 'Moeva', '1992-01-09', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Yulia', 'Resnianskaya', '2001-04-19', 'female');
+insert into oper_call (name, surname, birth, gender) values ('Maria', 'Reznikova', '2003-08-25', 'female');
+
+
+select * from driver;
+select * from car;
+select * from oper_call;
+
+(3)update car set model = 'Camry' where brand = 'Toyota';
+
+(4)select * from oper_call dictinct order by name desc limit 10;
+
+(5)update car set brand = 'Mersus' where brand = 'Mercedes';
+
+(6)delete from driver where surname = 'Azamatov';
+
+(7)select * from driver where experince >= 10 and gender = 'female';
+
+(8)select * from driver where birth <= '1975-10-10'
+
+(9)select car.brand,driver.name from car left join driver on car.id=driver.car_id; 
+
+(10)select car.brand, count(car.brand) AS kol from car group by brand order by kol desc;
+
+(11)select car.brand, count(driver.name) AS KOL from car left join driver on car.id=driver.car_id group by car.brand order by KOL DESC;
